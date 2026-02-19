@@ -8,27 +8,22 @@
     <script src="https://unpkg.com/lucide@latest"></script>
  
 <script>
+  const correctCode = "1234"; // փոխիր քո գաղտնի կոդով
+  let userCode;
+
+  // Թաքցնում ենք ամբողջ կայքը
   document.documentElement.style.display = "none";
 
-  fetch("config.json")
-    .then(response => response.json())
-    .then(data => {
-      const correctCode = data.lalala;
+  while (true) {
+    userCode = prompt("Մուտքագրիր գաղտնի կոդը:");
 
-      while (true) {
-        let userCode = prompt("Մուտքագրիր գաղտնի կոդը:");
-
-        if (userCode === correctCode) {
-          document.documentElement.style.display = "block";
-          break;
-        } else {
-          alert("Սխալ կոդ, փորձիր նորից!");
-        }
-      }
-    })
-    .catch(() => {
-      alert("Չհաջողվեց բեռնել config.json");
-    });
+    if (userCode === correctCode) {
+      document.documentElement.style.display = "block";
+      break;
+    } else {
+      alert("Սխալ կոդ, փորձիր նորից!");
+    }
+  }
 </script>
 
 
@@ -469,4 +464,5 @@ window.smartsupp||(function(d) {
 <noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
 
 </body>
+
 </html>
